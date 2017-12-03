@@ -14,6 +14,6 @@ export class SignupPage {
   }
   
   onGoToSignIn(){
-    this.navCtrl.push(SigninPage);
+    this.navCtrl.pop();
   }
 }
