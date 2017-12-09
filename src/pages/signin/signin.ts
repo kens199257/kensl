@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { SignupPage } from '../signup/signup';
 import { NgForm } from '@angular/forms/src/directives/ng_form';
+import { AuthService } from '../../services/auth';
 
 @IonicPage()
 @Component({
@@ -11,11 +12,19 @@ import { NgForm } from '@angular/forms/src/directives/ng_form';
 })
 export class SigninPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private authService: AuthService) {
   }
 
   onSignin(form: NgForm){
-    console.log(form.value);
+    this.authService.signin(form.value.email, form.value.password)
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
   onGoToSignUp(){
     this.navCtrl.push(SignupPage);
