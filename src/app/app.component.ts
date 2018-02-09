@@ -19,8 +19,10 @@ import { ProfilePage } from '../pages/profile/profile';
 export class MyApp {
   // rootPage:any = SigninPage;
   homePage = HomePage; 
+  signinPage = SigninPage;
   settingsPage = SettingsPage;
-  profilePage = ProfilePage
+  profilePage = ProfilePage;
+  isAuthenticated = false;
   @ViewChild('nav') nav: NavController;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private menuCtrl: MenuController) {
@@ -28,6 +30,17 @@ export class MyApp {
       apiKey: "AIzaSyDjN1zye2y_hAn2AQIKC7Cf_vW_hiXgNxw",
       authDomain: "kens-1ef18.firebaseapp.com",
     });
+    
+    firebase.auth().onAuthStateChanged(user => {
+      if(user){
+        this.isAuthenticated = true;
+        this.nav.setRoot(this.homePage);
+      }else{
+        this.isAuthenticated = false;
+        this.nav.setRoot(this.signinPage);
+      }
+    });
+
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
