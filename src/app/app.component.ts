@@ -39,5 +39,9 @@ export class MyApp {
     this.nav.setRoot(page);
     this.menuCtrl.close();
   }
+
+  onLogout(){
+    
+  }
 }
 
