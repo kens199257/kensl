@@ -29,6 +29,12 @@ export class SigninPage {
     this.authService.signin(form.value.email, form.value.password)
       .then(data => {
         loading.dismiss();
+        const myMessage = this.alertCtrl.create({
+          title: 'Signin sucessful!',
+          message: 'Userprofile exist',
+          buttons: ['Ok']
+        });
+        myMessage.present();
       })
       .catch(error => {
         loading.dismiss();
