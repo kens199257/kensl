@@ -9,13 +9,15 @@ import { HomePage } from '../pages/home/home';
 import { SigninPage } from '../pages/signin/signin';
 import { SignupPage } from '../pages/signup/signup';
 import { AuthService } from '../services/auth';
+import { SettingsPage } from '../pages/settings/settings';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     SigninPage,
-    SignupPage
+    SignupPage,
+    SettingsPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import { AuthService } from '../services/auth';
     MyApp,
     HomePage,
     SigninPage,
-    SignupPage
+    SignupPage,
+    SettingsPage
   ],
   providers: [
     StatusBar,
