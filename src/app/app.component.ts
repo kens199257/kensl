@@ -8,6 +8,7 @@ import firebase from 'firebase';
 import { HomePage } from '../pages/home/home';
 import { SigninPage } from '../pages/signin/signin';
 import { SettingsPage } from '../pages/settings/settings';
+import { ProfilePage } from '../pages/profile/profile';
 // import { MenuController } from 'ionic-angular/components/app/menu-controller';
 // import { ViewChild } from '@angular/core/src/metadata/di';
 // import { NavController } from 'ionic-angular/navigation/nav-controller';
@@ -18,7 +19,8 @@ import { SettingsPage } from '../pages/settings/settings';
 export class MyApp {
   // rootPage:any = SigninPage;
   homePage = HomePage; 
-  settingsPage = SettingsPage
+  settingsPage = SettingsPage;
+  profilePage = ProfilePage
   @ViewChild('nav') nav: NavController;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private menuCtrl: MenuController) {

@@ -10,6 +10,7 @@ import { SigninPage } from '../pages/signin/signin';
 import { SignupPage } from '../pages/signup/signup';
 import { AuthService } from '../services/auth';
 import { SettingsPage } from '../pages/settings/settings';
+import { ProfilePage } from '../pages/profile/profile';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,9 @@ import { SettingsPage } from '../pages/settings/settings';
     HomePage,
     SigninPage,
     SignupPage,
-    SettingsPage
+    SettingsPage,
+    ProfilePage
+    
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { SettingsPage } from '../pages/settings/settings';
     HomePage,
     SigninPage,
     SignupPage,
-    SettingsPage
+    SettingsPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,
